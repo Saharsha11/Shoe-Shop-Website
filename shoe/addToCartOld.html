@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOE VAULT - Your Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div id="hh">
+        <a href="homepage.html" class="image"><img src="Image/Shoe__1_-removebg-preview.png" alt="ShoeVault"
+                height="95%"></a>
+        <nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="mens.html">Mens</a></li>
+                    <li><a href="female.html">Female</a></li>
+                    <li><a href="kids.html">Kids</a></li>
+                    <li><a href="newArrival.html">Special Edition</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <header>
+        <h1>SHOE VAULT - Your Cart</h1>
+    </header>
+    <main>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Size</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <!-- Dynamically insert -->
+            </tbody>
+        </table>
+        <div id="total">Total: Rs 0</div>
+        <button id="buy-btn" class="buy-btn">Buy Now</button>
+    </main>
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // function updateCartUI() {
+        //     const cartItems = document.getElementById('cart-items');
+        //     const totalElement = document.getElementById('total');
+        //     let total = 0;
+
+        //     cartItems.innerHTML = '';
+        //     cart.forEach((item, index) => {
+        //         const row = document.createElement('tr');
+        //         row.innerHTML = `
+        //             <td>${item.name}</td>
+        //             <td>Rs ${item.price}</td>
+        //             <td><button class="remove-btn" data-index="${index}">Remove</button></td>
+        //         `;
+        //         cartItems.appendChild(row);        //         total += item.price;
+        //     });
+
+        //     totalElement.textContent = `Total: Rs ${total}`;
+        //     localStorage.setItem('cart', JSON.stringify(cart));
+        // }
+
+        function updateCartUI() {
+            const cartItems = document.getElementById('cart-items');
+            const totalElement = document.getElementById('total');
+            let total = 0;
+
+            cartItems.innerHTML = '';
+            cart.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.size}</td>
+                    <td>Rs ${item.price}</td>
+                    <td><button class="remove-btn" data-index="${index}">Remove</button></td>
+                `;
+                cartItems.appendChild(row);
+                total += item.price;
+            });
+
+            totalElement.textContent = `Total: Rs ${total}`;
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartUI();
+
+            document.getElementById('cart-items').addEventListener('click', function(e) {
+                if (e.target.classList.contains('remove-btn')) {
+                    const index = e.target.getAttribute('data-index');
+                    removeFromCart(index);
+                }
+            });
+
+            document.getElementById('buy-btn').addEventListener('click', function() {
+                alert('Thank you for your purchase!');
+                cart = [];
+                updateCartUI();
+            });
+        });
+    </script>
+</body>
+</html>

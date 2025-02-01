@@ -1,0 +1,202 @@
+#season {
+    padding: 0;
+    margin: 0;
+    height: 130vh; 
+    width: 100%;
+    background-image: url(Image/Season.png); 
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+}
+#season div{
+    height: 350px;
+    width: 350px;
+    margin: 12px;
+    background-color: rgb(235, 212, 183);
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}   
+#season div img{
+    height: fit-content;
+    width: 100%;
+    
+}   
+.folder{
+    display: flex;
+    padding: 0;
+}
+.nike {
+    height: 700px;
+    width: 50%;
+    background-image: url("Image/dunks.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    margin: 5px;
+    margin-bottom: 0;
+}
+
+.nike-child {
+    margin: 50px;
+}
+
+.nike-child h1 {
+    color: white;
+    font-weight: 800;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+}
+.nike-child img{
+    display: inline-block;
+    position: relative;
+    top: 0;
+    left: 50px;
+    height:"200px";
+    width:"350px";
+}
+
+.nike-child button {
+    background-color: rgba(0, 0, 0,0.5);
+    color: white;
+    padding: 10px 20px;
+    font-size: x-large;
+    border-radius: 10px;
+    border: white 2px solid;
+    font-weight: 600;
+}
+
+.adidas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px;
+    width: 50%;
+    background-image: url("Image/samba.jpg");
+    background-size: cover ;
+    float: right;
+    margin: 5px;
+    margin-left: 0;
+    margin-bottom: 0;
+}
+.adidas-child{
+    margin: 50px; 
+}
+.adidas-child h1{
+    color: rgb(7, 0, 0);
+    font-weight: 800;
+    font-size: 70px;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+}
+.adidas-child button {
+    background-color: rgba(0, 0, 0,0.5);
+    color: white;
+    padding: 10px 20px;
+    font-size: x-large;
+    border-radius: 10px;
+    border: white 2px solid;
+    font-weight: 600;
+}
+.container1{
+    margin: 5px;
+}
+.newbalance{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:800px;
+    width: 100%;
+    background-image: url("Image/new.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+.newbalance-child{
+    margin: 80px;  
+}
+.newbalance-child h1{
+    color: white;
+    font-weight: 800;
+    font-size: 70px;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+}
+.newbalance-child button {
+    background-color: rgba(0, 0, 0,0.5);
+    color: white;
+    padding: 10px 20px;
+    font-size: x-large;
+    border-radius: 10px;
+    border: white 2px solid;
+    font-weight: 600;
+}
+
+div button{
+    transition: 0.2s;
+}
+div button:hover{
+    background-color: rgb(34, 33, 33);
+    color: white;
+    border: white 2px solid ;
+    transform: scale(1.1);
+    transition: 0.2s;
+    cursor: pointer;
+}
+.spooky{
+    height: 800px;
+    width: 100%;
+    animation: slideshow 8s infinite ;
+}
+
+@keyframes slideshow{
+    0%{
+        background-image: url('spooky/1.png');
+        background-size: cover;
+        
+    }
+    50%{
+        background-image: url('spooky/2.png');
+        background-size: cover;
+    }
+    100%{
+        background-image: url('spooky/1.png');
+        background-size: cover;
+        
+    }
+}
+footer{
+    margin: 0;
+    margin-top: 15px;
+    position: relative;
+    bottom: 0;
+}
+.footer{
+    height: fit-content;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    font-size: large;
+    border-top: 2px #beb9b9 solid;
+    padding-top: 25px;
+}
+#cart-icon {
+position: relative;
+}
+#cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
