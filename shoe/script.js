@@ -10,7 +10,9 @@ function updateCartUI() {
     const cartCount = document.getElementById('cart-count');
     cartCount.innerText = cart.length;
 }
-
+const url=window.location.href;
+const foo=URL(window.location.href)
+console.log(foo)
 // Initialize cart UI when the page loads
 document.addEventListener('DOMContentLoaded', function () {
     updateCartUI(); // This will set the initial cart count
