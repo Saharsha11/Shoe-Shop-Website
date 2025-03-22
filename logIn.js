@@ -11,6 +11,7 @@ function exitPopUp() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    localStorage.setItem("useremail",null);//setting the user email to null to make sure the login page appears and the previous useremail is removed
     document.getElementById('myform').addEventListener('submit', function(event) {
         var email = document.getElementById('em').value;
         var password = document.getElementById('pass').value;

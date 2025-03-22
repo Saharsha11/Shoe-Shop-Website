@@ -1,5 +1,5 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+console.log(cart)
 function addToCart(productName,shoeSize, price) {
     cart.push({ name: productName,size : shoeSize, price: price });
     updateCartUI();
