@@ -92,7 +92,24 @@
             cart.splice(index, 1);
             updateCartUI();
         }
+        const gettotalprice=()=>{
+            let totalprice=0;
+            cart.forEach(element => {
+                totalprice+=element.price
+            });
+            return totalprice
+        }
 
+        const getemail=()=>{
+            const useremail=localStorage.getItem("useremail");
+            console.log(useremail);
+            if(!useremail){
+                alert("Please login to buy item.")
+                window.location.href='../index.php'; //yo useremail set nahuda index index.php ma lagne ekchoti check gaar mero ma xampp ma halera heryena maile
+            }else{
+                return useremail
+            }
+        }
         document.addEventListener('DOMContentLoaded', function() {
             updateCartUI();
 
@@ -106,6 +123,12 @@
             document.getElementById('buy-btn').addEventListener('click', function() {
                 console.log(cart)
                 alert('Thank you for your purchase!');
+
+
+                let datatosendtodatabase={useremail:getemail(),shoes:cart,Totalprice:gettotalprice()};//for shoes try to keep them as a group to help identify them like an order
+                console.log(datatosendtodatabase);
+
+
                 // cart = [];
                 updateCartUI();
             });
