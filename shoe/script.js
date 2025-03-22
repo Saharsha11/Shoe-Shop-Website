@@ -1,5 +1,5 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
+console.log(cart)
 function addToCart(productName,shoeSize, price) {
     cart.push({ name: productName,size : shoeSize, price: price });
     updateCartUI();
@@ -10,7 +10,9 @@ function updateCartUI() {
     const cartCount = document.getElementById('cart-count');
     cartCount.innerText = cart.length;
 }
-
+const url=window.location.href;
+const foo=URL(window.location.href)
+console.log(foo)
 // Initialize cart UI when the page loads
 document.addEventListener('DOMContentLoaded', function () {
     updateCartUI(); // This will set the initial cart count

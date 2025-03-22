@@ -24,7 +24,7 @@
       // $checkedPass = $result[0]["userPassword"];
 
       if($password === $result[0]["Password"]){
-         redirect("../shoe/homepage.html");
+         redirect("../shoe/homepage.html?user_email=$email");
       }else{
          redirect("../index.php?err=1");
       }

@@ -44,7 +44,7 @@
         <button id="buy-btn" class="buy-btn">Buy Now</button>
     </main>
     <script>
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; //local Storage is an object in the web browser and it is in string formart which is parsed to convert of a json object
 
         // function updateCartUI() {
         //     const cartItems = document.getElementById('cart-items');
@@ -104,8 +104,9 @@
             });
 
             document.getElementById('buy-btn').addEventListener('click', function() {
+                console.log(cart)
                 alert('Thank you for your purchase!');
-                cart = [];
+                // cart = [];
                 updateCartUI();
             });
         });
